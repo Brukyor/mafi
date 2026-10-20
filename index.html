@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8f0">
+  <meta name="description" content="A floral birthday greeting with warm wishes and treasured memories.">
+  <title>Happy Birthday, Miraf!</title>
+  <style>
+    :root {
+      --cream: #fbf8f0; --paper: #fffdf8; --sage: #7b8d69; --sage-dark: #4f6548;
+      --rose: #c77d88; --rose-dark: #925560; --lavender: #e5dced; --butter: #f1dfaa;
+      --ink: #403c36; --muted: #777269; --line: rgba(79,101,72,.16);
+      --shadow: 0 20px 55px rgba(75,81,59,.11);
+      --serif: Georgia, "Times New Roman", serif; --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body {
+      margin: 0; color: var(--ink); font-family: var(--sans); line-height: 1.7;
+      background: radial-gradient(ellipse at 7% 4%, rgba(241,223,170,.24), transparent 31rem),
+        radial-gradient(ellipse at 94% 23%, rgba(229,220,237,.42), transparent 32rem),
+        radial-gradient(ellipse at 4% 72%, rgba(199,125,136,.10), transparent 30rem), var(--cream);
+    }
+    a { color: inherit; } a, button { -webkit-tap-highlight-color: transparent; }
+    .page-shell { overflow: hidden; }
+    .topbar {
+      width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 22px 0;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+    .brand-mark { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: #e8e8d9; color: var(--sage-dark); font-size: 1rem; letter-spacing: 0; }
+    .top-note { font-size: .73rem; letter-spacing: .08em; text-align: right; }
+    .hero {
+      width: min(1120px, calc(100% - 40px)); min-height: 590px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.05fr .95fr; align-items: center;
+      gap: clamp(28px, 5vw, 72px); padding: 42px 0 88px;
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--sage-dark); font-size: .74rem; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -.055em; font-size: clamp(3.5rem, 7.8vw, 6.6rem); line-height: .98; margin: 22px 0; }
+    h1 .script { display: block; color: var(--rose-dark); font-style: italic; font-size: .84em; margin-left: .12em; }
+    .hero-copy { max-width: 510px; color: var(--muted); font-size: 1.03rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .button { min-height: 48px; padding: 12px 20px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font: inherit; font-size: .88rem; font-weight: 650; border: 1px solid transparent; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+    .button:hover { transform: translateY(-3px); }
+    .button:focus-visible, a:focus-visible { outline: 3px solid #82946f; outline-offset: 4px; }
+    .button-primary { background: var(--sage-dark); color: white; box-shadow: 0 10px 24px rgba(79,101,72,.2); }
+    .button-primary:hover { background: #3f543a; box-shadow: 0 13px 28px rgba(79,101,72,.26); }
+    .button-secondary { border-color: var(--line); background: rgba(255,255,255,.58); color: var(--ink); }
+    .button-secondary:hover { background: white; }
+    .hero-art { position: relative; min-height: 430px; display: grid; place-items: center; }
+    .art-halo { position: absolute; width: min(100%, 430px); aspect-ratio: 1; border-radius: 50%; background: linear-gradient(140deg, rgba(241,223,170,.63), rgba(229,220,237,.72), rgba(213,225,201,.8)); transform: rotate(-8deg); }
+    .art-card { width: min(78%, 320px); aspect-ratio: .76; position: relative; z-index: 1; border: 9px solid rgba(255,253,248,.9); border-radius: 180px 180px 24px 24px; background: linear-gradient(150deg, #f7e5e5, #f5eed7 52%, #e4e8dc); box-shadow: 0 25px 60px rgba(75,81,59,.17); overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 24px; }
+    .art-card::before, .art-card::after { content: "✿"; position: absolute; color: rgba(146,85,96,.43); }
+    .art-card::before { top: 17%; left: 15%; font-size: 2.1rem; transform: rotate(-18deg); }
+    .art-card::after { bottom: 18%; right: 14%; font-size: 1.8rem; color: rgba(79,101,72,.55); transform: rotate(18deg); }
+    .bouquet { font-size: clamp(4rem, 8vw, 6.3rem); line-height: 1.2; filter: drop-shadow(0 9px 10px rgba(100,75,75,.12)); }
+    .art-card-label { margin-top: 17px; font-family: var(--serif); font-size: 1.55rem; line-height: 1.2; }
+    .art-card-small { margin-top: 8px; color: var(--sage-dark); font-size: .68rem; letter-spacing: .17em; text-transform: uppercase; }
+    .floating-flower { position: absolute; color: var(--rose); font-size: 1.7rem; animation: float 5s ease-in-out infinite; }
+    .flower-one { top: 10%; right: 8%; } .flower-two { bottom: 13%; left: 7%; font-size: 1.25rem; animation-delay: -2s; color: var(--sage); }
+    .sparkle { position: absolute; color: #a695b5; font-size: 1.6rem; top: 22%; left: 7%; }
+    .section { padding: 86px 20px; } .section-inner { width: min(1060px, 100%); margin: 0 auto; }
+    .section-heading { text-align: center; max-width: 650px; margin: 0 auto 40px; }
+    .section-heading h2, .letter h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 5vw, 3.5rem); letter-spacing: -.035em; line-height: 1.1; margin: 14px 0; }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .gallery-section { background: rgba(255,255,255,.48); border-top: 1px solid rgba(255,255,255,.8); border-bottom: 1px solid var(--line); }
+    .floral-divider { text-align: center; color: var(--sage); font-size: 1.15rem; letter-spacing: .6em; margin: 0 0 20px; }
+    .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .photo-card { background: var(--paper); border: 1px solid rgba(79,101,72,.12); border-radius: 20px; overflow: hidden; box-shadow: 0 12px 35px rgba(75,81,59,.07); transition: transform .3s ease, box-shadow .3s ease; }
+    .photo-card:hover { transform: translateY(-7px); box-shadow: var(--shadow); }
+    .photo-frame { aspect-ratio: 4 / 4.4; background: linear-gradient(135deg, #f7e3e5, #e7eadf); overflow: hidden; position: relative; }
+    .photo-frame img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .6s ease; }
+    .photo-card:hover .photo-frame img { transform: scale(1.045); } .photo-frame img[hidden] { display: none; }
+    .photo-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 22px; color: var(--sage-dark); background: linear-gradient(145deg, #f7e5e5, #f5f0dc 54%, #e5eadf); }
+    .photo-placeholder[hidden] { display: none; } .placeholder-icon { font-size: 2.4rem; line-height: 1.3; color: var(--rose); }
+    .photo-placeholder strong { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; margin-top: 8px; }
+    .photo-placeholder span { font-size: .76rem; margin-top: 4px; color: var(--muted); }
+    .photo-copy { padding: 20px 21px 23px; } .photo-number { color: var(--sage-dark); text-transform: uppercase; letter-spacing: .16em; font-size: .67rem; font-weight: 700; }
+    .photo-copy h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin: 7px 0 5px; } .photo-copy p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .letter-section { padding-top: 100px; padding-bottom: 100px; }
+    .letter { max-width: 790px; margin: 0 auto; position: relative; padding: clamp(28px, 6vw, 62px); background: rgba(255,253,248,.86); border: 1px solid rgba(79,101,72,.15); border-radius: 24px; box-shadow: var(--shadow); text-align: center; }
+    .letter::before { content: "❀"; position: absolute; top: 16px; right: 24px; color: #c77d88; font-size: 1.8rem; }
+    .letter h2 { margin-bottom: 24px; }
+    .letter-message { color: var(--muted); font-size: 1.02rem; max-width: 640px; margin: 0 auto; text-align: left; }
+    .letter-message p { white-space: pre-line; margin: 0 0 20px; }
+    .verse { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 22px !important; text-align: center; line-height: 2; font-size: 1.03rem; }
+    .verse-title { display: block; color: var(--sage-dark); font-weight: 700; margin-bottom: 7px; }
+    .signature { margin-top: 29px; color: var(--sage-dark); font-family: var(--serif); font-size: 1.55rem; font-style: italic; }
+    .closing { text-align: center; padding: 34px 20px 42px; color: var(--muted); font-size: .8rem; } .closing-flower { color: var(--rose); padding: 0 5px; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; } .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-12px) rotate(6deg); } }
+    @media (max-width: 760px) {
+      .topbar { width: min(100% - 32px, 560px); padding: 17px 0; } .top-note { max-width: 135px; line-height: 1.4; }
+      .hero { width: min(100% - 36px, 560px); grid-template-columns: 1fr; gap: 12px; padding: 48px 0 66px; text-align: center; }
+      .hero .eyebrow { justify-content: center; } h1 { font-size: clamp(3.5rem, 15vw, 5.2rem); margin: 20px 0; }
+      .hero-copy { margin: 0 auto; font-size: .98rem; } .hero-actions { justify-content: center; }
+      .hero-art { min-height: 350px; margin-top: 10px; } .art-halo { width: min(82vw, 350px); } .art-card { width: min(67%, 270px); }
+      .section { padding: 68px 18px; } .gallery { grid-template-columns: 1fr; gap: 19px; max-width: 440px; margin: 0 auto; }
+      .photo-frame { aspect-ratio: 4 / 3.5; } .photo-copy { padding: 18px 20px 21px; }
+      .letter-section { padding-top: 70px; padding-bottom: 70px; }
+    }
+    @media (min-width: 540px) and (max-width: 760px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } .photo-card:last-child { grid-column: 1 / -1; max-width: calc(50% - 10px); justify-self: center; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">❀</span><span>A little birthday garden</span></div>
+      <div class="top-note">A day to celebrate you</div>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="birthday-title">
+        <div class="hero-content reveal">
+          <div class="eyebrow">A little bloom just for you</div>
+          <h1 id="birthday-title">Happy Birthday<span class="script" id="hero-name">Miraf.</span></h1>
+          <p class="hero-copy" id="hero-intro">A garden of memories and a wish for a year full of good health, happiness, and new beginnings.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#memories">View the memories <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="#birthday-letter">Read your birthday note <span aria-hidden="true">❀</span></a>
+          </div>
+        </div>
+        <div class="hero-art reveal" aria-label="A soft floral birthday illustration">
+          <div class="art-halo" aria-hidden="true"></div><span class="floating-flower flower-one" aria-hidden="true">✿</span>
+          <span class="floating-flower flower-two" aria-hidden="true">❀</span><span class="sparkle" aria-hidden="true">✧</span>
+          <div class="art-card"><div class="bouquet" aria-hidden="true">💐</div><div class="art-card-label">May your year bloom</div><div class="art-card-small">Joy • Growth • New beginnings</div></div>
+        </div>
+      </section>
+      <section class="section gallery-section" id="memories" aria-labelledby="gallery-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <div class="eyebrow">Treasured moments</div><h2 id="gallery-title">A garden of little memories</h2>
+            <p>Every photo tells a story. Here are three moments worth remembering.</p>
+          </div>
+          <div class="floral-divider" aria-hidden="true">✿ ❀ ✿</div>
+          <div class="gallery">
+            <article class="photo-card reveal"><div class="photo-frame">
+              <img src="photo1.jpg" alt="Birthday memory, photo one" data-photo="1">
+              <div class="photo-placeholder" hidden aria-hidden="true"><div class="placeholder-icon">✿</div><strong>Your photo goes here</strong><span>Add photo1.jpg beside index.html</span></div>
+            </div><div class="photo-copy"><div class="photo-number">Memory no. 01</div><h3 data-caption-title="0">The little things</h3><p data-caption-text="0">The simplest moments often become the best memories.</p></div></article>
+            <article class="photo-card reveal"><div class="photo-frame">
+              <img src="photo2.jpg" alt="Birthday memory, photo two" data-photo="2">
+              <div class="photo-placeholder" hidden aria-hidden="true"><div class="placeholder-icon">❀</div><strong>A moment to remember</strong><span>Add photo2.jpg beside index.html</span></div>
+            </div><div class="photo-copy"><div class="photo-number">Memory no. 02</div><h3 data-caption-title="1">A bright moment</h3><p data-caption-text="1">A reminder of the good times we have shared.</p></div></article>
+            <article class="photo-card reveal"><div class="photo-frame">
+              <img src="photo3.jpg" alt="Birthday memory, photo three" data-photo="3">
+              <div class="photo-placeholder" hidden aria-hidden="true"><div class="placeholder-icon">✧</div><strong>One more memory</strong><span>Add photo3.jpg beside index.html</span></div>
+            </div><div class="photo-copy"><div class="photo-number">Memory no. 03</div><h3 data-caption-title="2">More to come</h3><p data-caption-text="2">Wishing you many more wonderful moments ahead.</p></div></article>
+          </div>
+        </div>
+      </section>
+      <section class="section letter-section" id="birthday-letter" aria-labelledby="letter-title">
+        <div class="letter reveal">
+          <div class="eyebrow">A birthday message</div><h2 id="letter-title">Wishes for your new year</h2>
+          <div class="letter-message" id="birthday-message">
+            <p>I wish you good health, happiness, peace, and success in the year ahead. May you reach your goals, discover new opportunities, and find plenty of reasons to smile.</p>
+            <p>May each new day bring you strength, wisdom, and fresh opportunities to grow. Keep learning, keep moving forward, and may your plans turn into achievements.</p>
+            <p class="verse"><span class="verse-title">ዘኍልቁ 6፥24–26</span>
+              ²⁴ እግዚአብሔር ይባርክህ፥ ይጠብቅህም፤<br>
+              ²⁵ እግዚአብሔር ፊቱን ያብራልህ፥ ይራራልህም፤<br>
+              ²⁶ እግዚአብሔር ፊቱን ወደ አንተ ያንሣ፥ ሰላምንም ይስጥህ።
+            </p>
+          </div>
+          <div class="signature">Best wishes, <span id="signature-name">Eebbaa</span> <span aria-hidden="true">❀</span></div>
+        </div>
+      </section>
+    </main>
+    <footer class="closing">Wishing you a wonderful birthday and a bright year ahead <span class="closing-flower" aria-hidden="true">✿</span></footer>
+  </div>
+  <script>
+    "use strict";
+
+    // PERSONALIZE HERE: edit the birthday person's name and your name.
+    const birthdayPerson = "Miraf";
+    const fromPerson = "Eebbaa";
+
+    // Edit these birthday paragraphs. The Amharic blessing is kept separately below.
+    const birthdayParagraphs = [
+      "I wish you good health, happiness, peace, and success in the year ahead. May you reach your goals, discover new opportunities, and find plenty of reasons to smile.",
+      "May each new day bring you strength, wisdom, and fresh opportunities to grow. Keep learning, keep moving forward, and may your plans turn into achievements."
+    ];
+
+    // The Bible blessing appears in Amharic as supplied.
+    const amharicBlessing = [
+      "ዘኍልቁ 6፥24–26",
+      "²⁴ እግዚአብሔር ይባርክህ፥ ይጠብቅህም፤",
+      "²⁵ እግዚአብሔር ፊቱን ያብራልህ፥ ይራራልህም፤",
+      "²⁶ እግዚአብሔር ፊቱን ወደ አንተ ያንሣ፥ ሰላምንም ይስጥህ።"
+    ];
+
+    // Edit these captions to describe your own photos.
+    const photoCaptions = [
+      { title: "The little things", text: "The simplest moments often become the best memories." },
+      { title: "A bright moment", text: "A reminder of the good times we have shared." },
+      { title: "More to come", text: "Wishing you many more wonderful moments ahead." }
+    ];
+
+    const displayName = birthdayPerson.trim() || "Birthday star";
+    document.title = "Happy Birthday, " + displayName + "!";
+    document.getElementById("hero-name").textContent = displayName + ".";
+    document.getElementById("hero-intro").textContent =
+      "A garden of memories and a wish for a year full of good health, happiness, and new beginnings, " + displayName + ".";
+    document.getElementById("signature-name").textContent = fromPerson.trim() || "Your friend";
+
+    const messageContainer = document.getElementById("birthday-message");
+    messageContainer.replaceChildren();
+    birthdayParagraphs.forEach((paragraph) => {
+      const p = document.createElement("p");
+      p.textContent = paragraph;
+      messageContainer.appendChild(p);
+    });
+    const verse = document.createElement("p");
+    verse.className = "verse";
+    amharicBlessing.forEach((line, index) => {
+      if (index === 0) {
+        const title = document.createElement("span");
+        title.className = "verse-title";
+        title.textContent = line;
+        verse.appendChild(title);
+      } else {
+        verse.appendChild(document.createTextNode(line));
+        verse.appendChild(document.createElement("br"));
+      }
+    });
+    messageContainer.appendChild(verse);
+
+    photoCaptions.forEach((caption, index) => {
+      const title = document.querySelector('[data-caption-title="' + index + '"]');
+      const text = document.querySelector('[data-caption-text="' + index + '"]');
+      if (title) title.textContent = caption.title;
+      if (text) text.textContent = caption.text;
+    });
+
+    // Show a floral placeholder if a photo is missing.
+    document.querySelectorAll("img[data-photo]").forEach((img) => {
+      const placeholder = img.parentElement.querySelector(".photo-placeholder");
+      const showPlaceholder = () => {
+        img.hidden = true;
+        if (placeholder) {
+          placeholder.hidden = false;
+          placeholder.setAttribute("aria-hidden", "false");
+        }
+      };
+      img.addEventListener("error", showPlaceholder, { once: true });
+      if (img.complete && img.naturalWidth === 0) showPlaceholder();
+      else if (placeholder) placeholder.hidden = true;
+    });
+
+    // Animate sections gently; reduced-motion users see everything immediately.
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver((entries, activeObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            activeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
